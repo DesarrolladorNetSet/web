@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Biblioteca en línea</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+        <form>
+            <input
+              type="text"
+              name="search"
+              id="input_titulo"
+              placeholder="Buscar por título"
+            />
+            <button type="submit" id="searchTitle" onclick="obtenerTitulo(document.getElementById('input_titulo').value)">Buscar</button>
+          </form>
+    </header>
+    <main>
+      <div class="resultados">
+        <h2>Resultados de la búsqueda</h2>
+        <div class="filtro">
+          <label for="ordenar">Ordenar por:</label>
+          <select name="relevancia" id="relevancia" onchange="obtenerRelevance(this.value)">
+            <option value="Todos">Todos</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <label for="genero">Filtrar por género:</label>
+          <select name="genero" id="genero" onchange="obtenerGenero(this.value)">
+            <option value="Todos">Todos</option>
+            <option value="Romance">Romance</option>
+            <option value="mágico">Mágico</option>
+            <option value="ficción">Ficción</option>
+          </select>
+          <label for="idioma">Filtrar por idioma:</label>
+          <select name="idioma" id="idioma" onchange="obtenerIdioma(this.value)">
+            <option value="Todos">Todos</option>
+            <option value="Francés">Francés</option>
+            <option value="Español">Español</option>
+            <option value="Inglés">Inglés</option>
+          </select>
+        </div>
+        <div class="vista-cuadricula">
+          
+        </div>
+      </div>
+      <div id="popup-detalles">
+        <h2 class="detalle-titulo"></h2>
+        <p class="detalle-Autor"></p>
+        <p class="detalle-Resumen"></p>
+        <p class="detalle-Reseñas"></p>
+        <button id="boton-cerrar">Cerrar</button>
+      </div>
+    </main>
+  </body>
+  <script src="./javascript.js"></script>
+</html>
